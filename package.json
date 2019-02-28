@@ -1,0 +1,31 @@
+{
+  "name": "@liinkiing/react-hooks",
+  "version": "1.0.0",
+  "description": "A list of custom react hooks",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "umd:main": "dist/index.umd.js",
+  "module": "dist/index.mjs",
+  "source": "src/index.ts",
+  "repository": "https://github.com/Liinkiing/react-hooks",
+  "author": "Omar Jbara <omar.jbara2@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "microbundle -o dist/ --sourcemap false",
+    "dev": "microbundle watch -o dist/ --sourcemap false"
+  },
+  "dependencies": {
+    "@babel/core": "^7.3.4",
+    "@babel/polyfill": "^7.2.5",
+    "@babel/preset-env": "^7.3.4",
+    "@babel/preset-react": "^7.0.0",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3"
+  },
+  "devDependencies": {
+    "@types/react": "^16.8.6",
+    "@types/react-dom": "^16.8.2",
+    "tslint": "^5.13.0",
+    "tslint-react": "^3.6.0"
+  }
+}
