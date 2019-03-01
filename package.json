@@ -1,6 +1,6 @@
 {
   "name": "@liinkiing/react-hooks",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A list of custom react hooks",
   "main": "dist/react-hooks.js",
   "types": "dist/index.d.ts",
@@ -9,6 +9,7 @@
   "browser": "dist/react-hooks.js",
   "source": "src/index.ts",
   "repository": "https://github.com/Liinkiing/react-hooks",
+  "bugs": "https://github.com/Liinkiing/react-hooks/issues",
   "author": "Omar Jbara <omar.jbara2@gmail.com>",
   "license": "MIT",
   "scripts": {
