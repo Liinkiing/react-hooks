@@ -1,6 +1,6 @@
 {
   "name": "@liinkiing/react-hooks",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A list of custom react hooks",
   "main": "dist/react-hooks.js",
   "types": "dist/index.d.ts",
@@ -27,15 +27,13 @@
     "docs",
     "commit-docs"
   ],
-  "dependencies": {
+  "devDependencies": {
     "@babel/core": "^7.3.4",
     "@babel/polyfill": "^7.2.5",
     "@babel/preset-env": "^7.3.4",
     "@babel/preset-react": "^7.0.0",
     "react": "^16.8.3",
-    "react-dom": "^16.8.3"
-  },
-  "devDependencies": {
+    "react-dom": "^16.8.3",
     "@types/react": "^16.8.6",
     "@types/react-dom": "^16.8.2",
     "pre-commit": "^1.2.2",
