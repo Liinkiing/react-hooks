@@ -14,6 +14,11 @@
     "build": "microbundle -o dist/ --sourcemap false",
     "dev": "microbundle watch -o dist/ --sourcemap false"
   },
+  "keywords": [
+    "hooks",
+    "react",
+    "typescript"
+  ],
   "dependencies": {
     "@babel/core": "^7.3.4",
     "@babel/polyfill": "^7.2.5",
