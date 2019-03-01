@@ -1,6 +1,6 @@
 {
   "name": "@liinkiing/react-hooks",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A list of custom react hooks",
   "main": "dist/react-hooks.js",
   "types": "dist/index.d.ts",
@@ -15,7 +15,8 @@
   "scripts": {
     "build": "microbundle -o dist/ --sourcemap false",
     "dev": "microbundle watch -o dist/ --sourcemap false",
-    "docs": "typedoc --tsconfig ./tsconfig.docs.json --out docs ./src"
+    "docs": "typedoc --tsconfig ./tsconfig.docs.json --out docs ./src",
+    "commit-docs": "git add ./docs/*"
   },
   "keywords": [
     "hooks",
@@ -23,7 +24,8 @@
     "typescript"
   ],
   "pre-commit": [
-    "docs"
+    "docs",
+    "commit-docs"
   ],
   "dependencies": {
     "@babel/core": "^7.3.4",
