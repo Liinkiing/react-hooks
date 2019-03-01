@@ -73,6 +73,36 @@
 				<pre><code class="language-bash">$ npm i @liinkiing/react-hooks</code></pre>
 				<h2 id="documentation">Documentation</h2>
 				<p><a href="https://liinkiing.github.io/react-hooks/globals.html">https://liinkiing.github.io/react-hooks/globals.html</a></p>
+				<h2 id="example">Example</h2>
+				<p><code>`</code>typescript jsx
+					import * as React from &#39;react&#39;
+					import {FunctionComponent} from &#39;react&#39;
+				import {useResize, useKeyboardShortcuts} from &#39;@liinkiing/react-hooks&#39;;</p>
+				<p>const App: FunctionComponent = props =&gt; {
+					const { height, width } = useResize()
+				console.log(height, width)</p>
+				<p>  useKeyboardShortcuts([
+					{
+					action: () =&gt; { console.log(&quot;You&#39;ve pressed I or S&quot;)},
+					keys: [&quot;I&quot;, &quot;S&quot;]
+					},
+					{
+					action: () =&gt; { console.log(&quot;You&#39;ve pressed O&quot;)},
+					keys: [&quot;O&quot;]
+					},
+					{
+					action: () =&gt; { console.log(&quot;You&#39;ve pressed U&quot;)},
+					keys: [&quot;U&quot;]
+					}
+					])
+					return (
+					<div>
+						<h1>App</h1>
+					</div>
+					)
+				}</p>
+				<p>export default App
+				<code>`</code></p>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
