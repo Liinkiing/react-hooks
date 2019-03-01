@@ -1,1 +1,7 @@
 export {default as useResize} from './hooks/useResize'
+export {default as useInterval} from './hooks/useInterval'
+export {default as useTimeout} from './hooks/useTimeout'
+export {default as useDeviceMotion} from './hooks/useDeviceMotion'
+export {default as useKeyboardInput} from './hooks/useKeyboardInput'
+export {default as useKeyboardShortcuts} from './hooks/useKeyboardShortcuts'
+export {default as useRaf} from './hooks/useRaf'
