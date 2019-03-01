@@ -13,7 +13,8 @@
   "license": "MIT",
   "scripts": {
     "build": "microbundle -o dist/ --sourcemap false",
-    "dev": "microbundle watch -o dist/ --sourcemap false"
+    "dev": "microbundle watch -o dist/ --sourcemap false",
+    "docs": "typedoc --tsconfig ./tsconfig.docs.json --out docs ./src"
   },
   "keywords": [
     "hooks",
