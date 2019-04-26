@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;hooks/useTimeout&quot; | @liinkiing/react-hooks</title>
+	<title>Handler | @liinkiing/react-hooks</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,55 +56,75 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_hooks_usetimeout_.html">&quot;hooks/useTimeout&quot;</a>
+					<a href="../modules/_hooks_useinput_.html">&quot;hooks/useInput&quot;</a>
+				</li>
+				<li>
+					<a href="_hooks_useinput_.handler.html">Handler</a>
 				</li>
 			</ul>
-			<h1>External module &quot;hooks/useTimeout&quot;</h1>
+			<h1>Interface Handler&lt;T&gt;</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-type-parameters">
+				<h3>Type parameters</h3>
+				<ul class="tsd-type-parameters">
+					<li>
+						<h4>T</h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">Handler</span>
+					</li>
+				</ul>
+			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section tsd-is-not-exported">
-							<h3>Type aliases</h3>
+							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported"><a href="_hooks_usetimeout_.html#callable" class="tsd-kind-icon">Callable</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section ">
-							<h3>Functions</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_hooks_usetimeout_.html#usetimeout" class="tsd-kind-icon">use<wbr>Timeout</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_hooks_useinput_.handler.html#onchange" class="tsd-kind-icon">on<wbr>Change</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_hooks_useinput_.handler.html#value" class="tsd-kind-icon">value</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
-				<h2>Type aliases</h2>
-				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported">
-					<a name="callable" class="tsd-anchor"></a>
-					<h3>Callable</h3>
-					<div class="tsd-signature tsd-kind-icon">Callable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+					<a name="onchange" class="tsd-anchor"></a>
+					<h3>on<wbr>Change</h3>
+					<div class="tsd-signature tsd-kind-icon">on<wbr>Change<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Liinkiing/react-hooks/blob/a960146/src/hooks/useTimeout.ts#L3">hooks/useTimeout.ts:3</a></li>
+							<li>Defined in <a href="https://github.com/Liinkiing/react-hooks/blob/a960146/src/hooks/useInput.ts#L7">hooks/useInput.ts:7</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
 						<h4>Type declaration</h4>
 						<ul class="tsd-parameters">
 							<li class="tsd-parameter-siganture">
-								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-type-alias tsd-is-not-exported">
-									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property tsd-is-not-exported">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>e<span class="tsd-signature-symbol">: </span><a href="../modules/_hooks_useinput_.html#onchangeevent" class="tsd-signature-type">OnChangeEvent</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 								</ul>
 								<ul class="tsd-descriptions">
 									<li class="tsd-description">
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5>e: <a href="../modules/_hooks_useinput_.html#onchangeevent" class="tsd-signature-type">OnChangeEvent</a></h5>
+											</li>
+										</ul>
 										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 									</li>
 								</ul>
@@ -112,34 +132,15 @@
 						</ul>
 					</div>
 				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Functions</h2>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
-					<a name="usetimeout" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> use<wbr>Timeout</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-						<li class="tsd-signature tsd-kind-icon">use<wbr>Timeout<span class="tsd-signature-symbol">(</span>callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">TimerHandler</span>, delay<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/Liinkiing/react-hooks/blob/a960146/src/hooks/useTimeout.ts#L5">hooks/useTimeout.ts:5</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>callback: <span class="tsd-signature-type">TimerHandler</span></h5>
-								</li>
-								<li>
-									<h5>delay: <span class="tsd-signature-type">number</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+					<a name="value" class="tsd-anchor"></a>
+					<h3>value</h3>
+					<div class="tsd-signature tsd-kind-icon">value<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">T</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Liinkiing/react-hooks/blob/a960146/src/hooks/useInput.ts#L6">hooks/useInput.ts:6</a></li>
+						</ul>
+					</aside>
 				</section>
 			</section>
 		</div>
@@ -150,44 +151,59 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_hooks_usedevicemotion_.html">"hooks/use<wbr>Device<wbr>Motion"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_hooks_useinput_.html">"hooks/use<wbr>Input"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_hooks_useinterval_.html">"hooks/use<wbr>Interval"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_hooks_usekeyboardinput_.html">"hooks/use<wbr>Keyboard<wbr>Input"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_hooks_usekeyboardshortcuts_.html">"hooks/use<wbr>Keyboard<wbr>Shortcuts"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_hooks_useprevious_.html">"hooks/use<wbr>Previous"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_hooks_useraf_.html">"hooks/use<wbr>Raf"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_hooks_useresize_.html">"hooks/use<wbr>Resize"</a>
+						<a href="../modules/_hooks_usedevicemotion_.html">"hooks/use<wbr>Device<wbr>Motion"</a>
 					</li>
 					<li class="current tsd-kind-external-module">
-						<a href="_hooks_usetimeout_.html">"hooks/use<wbr>Timeout"</a>
+						<a href="../modules/_hooks_useinput_.html">"hooks/use<wbr>Input"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_index_.html">"index"</a>
+						<a href="../modules/_hooks_useinterval_.html">"hooks/use<wbr>Interval"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_hooks_usekeyboardinput_.html">"hooks/use<wbr>Keyboard<wbr>Input"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_hooks_usekeyboardshortcuts_.html">"hooks/use<wbr>Keyboard<wbr>Shortcuts"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_hooks_useprevious_.html">"hooks/use<wbr>Previous"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_hooks_useraf_.html">"hooks/use<wbr>Raf"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_hooks_useresize_.html">"hooks/use<wbr>Resize"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_hooks_usetimeout_.html">"hooks/use<wbr>Timeout"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_index_.html">"index"</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="_hooks_usetimeout_.html#callable" class="tsd-kind-icon">Callable</a>
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported">
+						<a href="_hooks_useinput_.handler.html" class="tsd-kind-icon">Handler</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+								<a href="_hooks_useinput_.handler.html#onchange" class="tsd-kind-icon">on<wbr>Change</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+								<a href="_hooks_useinput_.handler.html#value" class="tsd-kind-icon">value</a>
+							</li>
+						</ul>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="_hooks_usetimeout_.html#usetimeout" class="tsd-kind-icon">use<wbr>Timeout</a>
+				</ul>
+				<ul class="after-current">
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="../modules/_hooks_useinput_.html#onchangeevent" class="tsd-kind-icon">On<wbr>Change<wbr>Event</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter">
+						<a href="../modules/_hooks_useinput_.html#useinput" class="tsd-kind-icon">use<wbr>Input</a>
 					</li>
 				</ul>
 			</nav>
