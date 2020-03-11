@@ -1,3 +1,4 @@
+import {RefObject} from "react"
 import useKeyboardInput from "./useKeyboardInput"
 
 interface KeyboardShortcut {
@@ -5,7 +6,7 @@ interface KeyboardShortcut {
   action: () => void
 }
 
-const useKeyboardShortcuts = (shortcuts: KeyboardShortcut[]) => {
+const useKeyboardShortcuts = <T extends HTMLElement>(shortcuts: KeyboardShortcut[], ref?: RefObject<T>) => {
   useKeyboardInput(e => {
     shortcuts.forEach(shortcut => {
       if (
@@ -14,6 +15,6 @@ const useKeyboardShortcuts = (shortcuts: KeyboardShortcut[]) => {
         shortcut.action()
       }
     })
-  })
+  }, [], ref)
 }
 export default useKeyboardShortcuts

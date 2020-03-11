@@ -5,6 +5,7 @@
     "ordered-imports": false,
     "interface-name": false,
     "semicolon": false,
+    "arrow-parens": false,
     "no-debugger": {
       "severity": "warning"
     },
