@@ -11,9 +11,6 @@
   "repository": "git://github.com/Liinkiing/react-hooks",
   "bugs": "https://github.com/Liinkiing/react-hooks/issues",
   "author": "Omar Jbara <omar.jbara2@gmail.com>",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
   "license": "MIT",
   "scripts": {
     "build": "microbundle -o dist/ --sourcemap false",
