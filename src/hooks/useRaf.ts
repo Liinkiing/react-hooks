@@ -6,7 +6,7 @@ const useRaf = (ms: number = 1e12, delay: number = 0): number => {
   useLayoutEffect(
     () => {
       let raf: number
-      let timerStop: number
+      let timerStop: any
       let start: number
 
       const onFrame = () => {
@@ -33,7 +33,7 @@ const useRaf = (ms: number = 1e12, delay: number = 0): number => {
         cancelAnimationFrame(raf)
       }
     },
-    [ms, delay]
+    [ms, delay],
   )
 
   return elapsed
