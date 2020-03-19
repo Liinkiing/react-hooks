@@ -9,9 +9,9 @@ interface Handler<T> {
 
 function useInput<T>(
   initialValue: T,
-): Handler<T> {
+): [Handler<T>, () => void] {
   const [value, setValue] = useState<T>(initialValue);
-
+  const clearInput = () => { setValue("" as unknown as T) }
   const onChange = (e: OnChangeEvent) => {
     setValue(e.target.value as unknown as T)
   }
@@ -20,10 +20,10 @@ function useInput<T>(
     setValue(initialValue);
   }, [initialValue]);
 
-  return {
+  return [{
     value,
-    onChange
-  };
+    onChange,
+  }, clearInput];
 }
 
 export default useInput;
