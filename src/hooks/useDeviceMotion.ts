@@ -1,8 +1,8 @@
 import {DependencyList, useCallback, useEffect, useState,} from "react"
 
-const useDeviceMotion = (
+function useDeviceMotion(
   inputs?: DependencyList
-): DeviceAcceleration => {
+): DeviceAcceleration {
   const [acceleration, setAcceleration] = useState<DeviceAcceleration>({
     x: 0,
     y: 0,

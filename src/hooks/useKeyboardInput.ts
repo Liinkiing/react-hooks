@@ -1,6 +1,6 @@
 import {DependencyList, useEffect} from "react"
 
-const useKeyboardInput = <T extends HTMLElement>(listener: (e: KeyboardEvent) => void, deps: DependencyList = [], ref?: React.RefObject<T>) => {
+function useKeyboardInput<T extends HTMLElement>(listener: (e: KeyboardEvent) => void, deps: DependencyList = [], ref?: React.RefObject<T>) {
   useEffect(() => {
     if (ref && ref.current) {
       ref.current.addEventListener("keydown", listener)

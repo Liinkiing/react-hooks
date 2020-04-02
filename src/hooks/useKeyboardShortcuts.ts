@@ -7,7 +7,7 @@ interface KeyboardShortcut {
   action: () => void
 }
 
-const useKeyboardShortcuts = <T extends HTMLElement>(shortcuts: KeyboardShortcut[], ref?: RefObject<T>, deps?: DependencyList) => {
+function useKeyboardShortcuts<T extends HTMLElement>(shortcuts: KeyboardShortcut[], ref?: RefObject<T>, deps?: DependencyList) {
   useKeyboardInput(e => {
     shortcuts.forEach(shortcut => {
       if (
@@ -21,4 +21,5 @@ const useKeyboardShortcuts = <T extends HTMLElement>(shortcuts: KeyboardShortcut
     })
   }, deps || [], ref)
 }
+
 export default useKeyboardShortcuts

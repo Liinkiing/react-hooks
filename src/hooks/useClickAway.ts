@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect } from 'react'
 
-const useClickAway = <T extends HTMLElement>(ref: React.RefObject<T>, onClickAway: () => void) => {
+function useClickAway<T extends HTMLElement>(ref: React.RefObject<T>, onClickAway: () => void) {
   const handleClickOutside = useCallback(
     event => {
       if (ref.current && !ref.current.contains(event.target)) {

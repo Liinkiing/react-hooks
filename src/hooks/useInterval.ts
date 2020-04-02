@@ -2,7 +2,7 @@ import {useEffect, useRef} from "react"
 
 type Callable = () => void
 
-const useInterval = (callback: TimerHandler, delay: number) => {
+function useInterval(callback: TimerHandler, delay: number) {
   const savedCallback = useRef<Callable>()
 
   useEffect(() => {
