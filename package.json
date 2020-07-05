@@ -34,7 +34,7 @@
     "@babel/preset-react": "^7.0.0",
     "@types/react": "^16.8.6",
     "@types/react-dom": "^16.8.2",
-    "microbundle": "^0.11.0",
+    "microbundle": "^0.12.2",
     "pre-commit": "^1.2.2",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",

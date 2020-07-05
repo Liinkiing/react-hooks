@@ -11,7 +11,7 @@ function useKeyboardShortcuts<T extends HTMLElement>(shortcuts: KeyboardShortcut
   useKeyboardInput(e => {
     shortcuts.forEach(shortcut => {
       if (
-        shortcut.keys.some(key => (key.toLowerCase() === e.key.toLowerCase() || key === e.code))
+        shortcut.keys.some(key => (key && e.key && key.toLowerCase() === e.key.toLowerCase() || key === e.code))
       ) {
         if (shortcut.preventDefault) {
           e.preventDefault()
