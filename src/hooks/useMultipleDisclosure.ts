@@ -1,20 +1,20 @@
 import { useCallback, useState } from 'react'
 
-interface MultipleDisclosure {
-  isOpen: (id: string) => boolean
-  onOpen: (id: string) => () => void
-  onClose: (id: string) => () => void
-  onToggle: (id: string) => () => void
+type MultipleDisclosure<T> = {
+  isOpen: (id: T) => boolean
+  onOpen: (id: T) => () => void
+  onClose: (id: T) => () => void
+  onToggle: (id: T) => () => void
 }
 
-function useMultipleDisclosure(initialDisclosures: Record<string, any> = {}): MultipleDisclosure {
-  const [disclosures, setDisclosures] = useState<Record<string, any>>(initialDisclosures)
+function useMultipleDisclosure<T extends Record<string, any> = {}>(initialDisclosures:  T): MultipleDisclosure<keyof T> {
+  const [disclosures, setDisclosures] = useState<Record<keyof T, any>>(initialDisclosures)
   const isOpen = useCallback(
-    (disclosureId: string) => disclosureId in disclosures && disclosures[disclosureId] === true,
+    (disclosureId: keyof T) => disclosureId in disclosures && disclosures[disclosureId] === true,
     [disclosures],
   )
   const onClose = useCallback(
-    (disclosureId: string) => () =>
+    (disclosureId: keyof T) => () =>
       setDisclosures(v => ({
         ...v,
         [disclosureId]: false,
@@ -22,7 +22,7 @@ function useMultipleDisclosure(initialDisclosures: Record<string, any> = {}): Mu
     [],
   )
   const onOpen = useCallback(
-    (disclosureId: string) => () =>
+    (disclosureId: keyof T) => () =>
       setDisclosures(v => ({
         ...v,
         [disclosureId]: true,
@@ -30,7 +30,7 @@ function useMultipleDisclosure(initialDisclosures: Record<string, any> = {}): Mu
     [],
   )
   const onToggle = useCallback(
-    (disclosureId: string) => () =>
+    (disclosureId: keyof T) => () =>
       setDisclosures(v => ({
         ...v,
         [disclosureId]: v[disclosureId] === undefined ? true : !v[disclosureId],
