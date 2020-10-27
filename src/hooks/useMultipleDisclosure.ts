@@ -7,14 +7,15 @@ type MultipleDisclosure<T> = {
   onToggle: (id: T) => () => void
 }
 
-function useMultipleDisclosure<T extends Record<string, boolean> = {}>(initialDisclosures: T): MultipleDisclosure<keyof T> {
-  const [disclosures, setDisclosures] = useState<Record<keyof T, boolean>>(initialDisclosures ?? {})
+function useMultipleDisclosure<T extends Record<string, boolean>>(initialDisclosures?: T):
+  T extends Record<keyof T, boolean> ? MultipleDisclosure<keyof T> : MultipleDisclosure<string> {
+  const [disclosures, setDisclosures] = useState<Record<string, boolean>>(initialDisclosures ?? {})
   const isOpen = useCallback(
-    (disclosureId: keyof T) => disclosureId in disclosures && disclosures[disclosureId] === true,
+    (disclosureId) => disclosureId in disclosures && disclosures[disclosureId] === true,
     [disclosures],
   )
   const onClose = useCallback(
-    (disclosureId: keyof T) => () =>
+    (disclosureId) => () =>
       setDisclosures(v => ({
         ...v,
         [disclosureId]: false,
@@ -22,7 +23,7 @@ function useMultipleDisclosure<T extends Record<string, boolean> = {}>(initialDi
     [],
   )
   const onOpen = useCallback(
-    (disclosureId: keyof T) => () =>
+    (disclosureId) => () =>
       setDisclosures(v => ({
         ...v,
         [disclosureId]: true,
@@ -30,14 +31,14 @@ function useMultipleDisclosure<T extends Record<string, boolean> = {}>(initialDi
     [],
   )
   const onToggle = useCallback(
-    (disclosureId: keyof T) => () =>
+    (disclosureId) => () =>
       setDisclosures(v => ({
         ...v,
         [disclosureId]: v[disclosureId] === undefined ? true : !v[disclosureId],
       })),
     [],
   )
-  return { isOpen, onOpen, onClose, onToggle }
+  return { isOpen, onOpen, onClose, onToggle } as T extends Record<keyof T, boolean> ? MultipleDisclosure<keyof T> : MultipleDisclosure<string>
 }
 
 export default useMultipleDisclosure
