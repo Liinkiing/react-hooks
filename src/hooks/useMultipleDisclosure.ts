@@ -1,10 +1,10 @@
 import { useCallback, useState } from 'react'
 
 type MultipleDisclosure<T> = {
-  isOpen: (id: T) => boolean
-  onOpen: (id: T) => () => void
-  onClose: (id: T) => () => void
-  onToggle: (id: T) => () => void
+  isOpen: (id: T | string) => boolean
+  onOpen: (id: T | string) => () => void
+  onClose: (id: T | string) => () => void
+  onToggle: (id: T | string) => () => void
 }
 
 function useMultipleDisclosure<T extends Record<string, boolean>>(initialDisclosures?: T):
