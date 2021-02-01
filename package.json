@@ -14,6 +14,7 @@
   "license": "MIT",
   "scripts": {
     "build": "microbundle -o dist/ --sourcemap false",
+    "prepare": "yarn run build",
     "dev": "microbundle watch -o dist/ --sourcemap false",
     "docs": "typedoc --disableOutputCheck --tsconfig ./tsconfig.docs.json --out docs ./src",
     "commit-docs": "git add ./docs/*"
