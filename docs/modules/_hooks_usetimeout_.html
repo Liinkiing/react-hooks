@@ -70,10 +70,10 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section tsd-is-not-exported">
+						<section class="tsd-index-section ">
 							<h3>Type aliases</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported"><a href="_hooks_usetimeout_.html#callable" class="tsd-kind-icon">Callable</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-external-module"><a href="_hooks_usetimeout_.html#canceltimer" class="tsd-kind-icon">Cancel<wbr>Timer</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -85,22 +85,22 @@
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Type aliases</h2>
-				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported">
-					<a name="callable" class="tsd-anchor"></a>
-					<h3>Callable</h3>
-					<div class="tsd-signature tsd-kind-icon">Callable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module">
+					<a name="canceltimer" class="tsd-anchor"></a>
+					<h3>Cancel<wbr>Timer</h3>
+					<div class="tsd-signature tsd-kind-icon">Cancel<wbr>Timer<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Liinkiing/react-hooks/blob/f2d015d/src/hooks/useTimeout.ts#L3">hooks/useTimeout.ts:3</a></li>
+							<li>Defined in <a href="https://github.com/Liinkiing/react-hooks/blob/a38edda/src/hooks/useTimeout.ts#L5">hooks/useTimeout.ts:5</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
 						<h4>Type declaration</h4>
 						<ul class="tsd-parameters">
 							<li class="tsd-parameter-siganture">
-								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-type-alias tsd-is-not-exported">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-type-alias">
 									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 								</ul>
 								<ul class="tsd-descriptions">
@@ -117,27 +117,42 @@
 				<h2>Functions</h2>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
 					<a name="usetimeout" class="tsd-anchor"></a>
-					<h3>use<wbr>Timeout</h3>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> use<wbr>Timeout</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-						<li class="tsd-signature tsd-kind-icon">use<wbr>Timeout<span class="tsd-signature-symbol">(</span>callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">TimerHandler</span>, delay<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">use<wbr>Timeout<span class="tsd-signature-symbol">(</span>callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span>, timeout<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, deps<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_hooks_usetimeout_.html#canceltimer" class="tsd-signature-type">CancelTimer</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Liinkiing/react-hooks/blob/f2d015d/src/hooks/useTimeout.ts#L5">hooks/useTimeout.ts:5</a></li>
+									<li>Defined in <a href="https://github.com/Liinkiing/react-hooks/blob/a38edda/src/hooks/useTimeout.ts#L7">hooks/useTimeout.ts:7</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>callback: <span class="tsd-signature-type">TimerHandler</span></h5>
+									<h5>callback: <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
 								</li>
 								<li>
-									<h5>delay: <span class="tsd-signature-type">number</span></h5>
+									<h5>timeout: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> deps: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="_hooks_usetimeout_.html#canceltimer" class="tsd-signature-type">CancelTimer</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -195,8 +210,8 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="_hooks_usetimeout_.html#callable" class="tsd-kind-icon">Callable</a>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module">
+						<a href="_hooks_usetimeout_.html#canceltimer" class="tsd-kind-icon">Cancel<wbr>Timer</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module">
 						<a href="_hooks_usetimeout_.html#usetimeout" class="tsd-kind-icon">use<wbr>Timeout</a>

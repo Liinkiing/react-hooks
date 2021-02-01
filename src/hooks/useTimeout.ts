@@ -1,26 +1,48 @@
-import {useEffect, useRef} from "react"
+// https://github.com/jkomyno/usetimeout-react-hook/blob/fbd793e8a2b8c1101c56157194fb3db685bacc7f/src/useTimeout.ts
+// and adapted it a bit
+import { useEffect, useRef } from 'react';
 
-type Callable = () => void
+export type CancelTimer = () => void;
 
-function useTimeout(callback: TimerHandler, delay: number) {
-  const savedCallback = useRef<Callable>()
+export const useTimeout = (callback: () => void, timeout: number, deps?: any[]): CancelTimer => {
+  const refCallback = useRef<any>();
+  const refTimer = useRef<any>();
 
   useEffect(() => {
-    savedCallback.current = callback as Callable
-  })
+    refCallback.current = callback;
+  }, [callback]);
 
+  /**
+   * The timer is restarted every time an item in `deps` changes.
+   *
+   */
   useEffect(() => {
-    const tick = () => {
-      if (savedCallback.current) {
-        savedCallback.current()
+    let timerID: any = null;
+    if (typeof window !== 'undefined') {
+      timerID = window.setTimeout(refCallback.current, timeout);
+      refTimer.current = timerID;
+    }
+
+    // cleans the timer identified by timerID when the effect is unmounted.
+    return () => {
+      if (typeof window !== 'undefined' && timerID) {
+        window.clearTimeout(timerID);
       }
-    }
-    if (delay !== null) {
-      const id = setTimeout(tick, delay)
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, deps);
 
-      return () => clearTimeout(id)
-    }
-  }, [delay])
-}
+  /**
+   * Returns a function that can be used to cancel the current timeout.
+   * It does so using `timeHandler.clearTimeout` without exposing the last
+   * reference to the timer to the user.
+   */
+  function cancelTimer() {
+    if (typeof window === 'undefined') return;
+    return window.clearTimeout(refTimer.current);
+  }
 
-export default useTimeout
+  return cancelTimer;
+};
+
+export default useTimeout;
