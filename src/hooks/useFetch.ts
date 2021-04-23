@@ -72,10 +72,10 @@ function useApi<R extends any = any>(endpoint: string, options: Options = { lazy
         try {
           /**
            * Needed because when doing twice request in a row, the browser actually throws the error after the new
-           * request is being made, thus why we are waiting a small amount just to be sure that it is executed
+           * request is being made, thus why we are waiting for the next event loop just to be sure that it is executed
            * after the browser has thrown the error
            */
-          await wait(16)
+          await wait(0)
           dispatch({ type: 'FETCH_INIT' })
           const response = await fetch(url, { ...memoizedOptions.fetchOptions, signal: controller.signal })
           if (response.ok) {
