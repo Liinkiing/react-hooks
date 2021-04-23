@@ -13,7 +13,7 @@ type Action<R extends any = any> =
   | { readonly type: 'FETCH_CANCELED' }
   | { readonly type: 'FETCH_SUCCESS'; payload: R }
 
-const reducer: <R>() => Reducer<State<R>, Action<R>> = () => (state, action) => {
+const reducer: Reducer<State, Action> = (state, action) => {
   switch (action.type) {
     case 'FETCH_INIT':
       return {
@@ -56,7 +56,7 @@ type Options = {
 function useApi<R extends any = any>(endpoint: string, options: Options = { lazy: false }) {
   const memoizedOptions = useMemo(() => options, [])
   const [url, setUrl] = useState(() => (options && options.lazy ? null : endpoint))
-  const [state, dispatch] = useReducer(reducer<R>(), { status: 'pending', data: null, loading: false, error: null })
+  const [state, dispatch] = useReducer(reducer as Reducer<State<R>, Action<R>>, { status: 'pending', data: null, loading: false, error: null })
   useEffect(() => {
     let didCancel = false
     if (url) {
