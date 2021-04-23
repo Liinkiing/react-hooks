@@ -55,7 +55,7 @@ type Options = {
 
 const wait = (ms: number) => new Promise(resolve => setTimeout(resolve, ms))
 
-function useApi<R extends any = any>(endpoint: string, options: Options = { lazy: false }) {
+function useFetch<R extends any = any>(endpoint: string, options: Options = { lazy: false }) {
   const memoizedOptions = useMemo(() => options, [])
   const [url, setUrl] = useState(() => (options && options.lazy ? null : endpoint))
   const [state, dispatch] = useReducer<Reducer<State<R>, Action<R>>>(reducer, {
@@ -103,4 +103,4 @@ function useApi<R extends any = any>(endpoint: string, options: Options = { lazy
   return [state, setUrl] as const
 }
 
-export default useApi
+export default useFetch
