@@ -1,9 +1,9 @@
-import {Reducer, useEffect, useMemo, useReducer, useRef, useState} from 'react'
+import { Reducer, useEffect, useMemo, useReducer, useState } from 'react'
 
 type State<R extends any = any> = {
   error: string | null
   loading: boolean
-  status: 'pending' | 'error' | 'success' | 'canceled'
+  status: 'pending' | 'error' | 'success' | 'loading'
   data: R | null
 }
 
@@ -20,7 +20,7 @@ const reducer: Reducer<State, Action> = (state, action) => {
         data: null,
         loading: true,
         error: null,
-        status: 'pending',
+        status: 'loading',
       }
     case 'FETCH_FAILED':
       return {
@@ -34,7 +34,7 @@ const reducer: Reducer<State, Action> = (state, action) => {
         data: null,
         error: null,
         loading: false,
-        status: 'canceled',
+        status: 'pending',
       }
     case 'FETCH_SUCCESS':
       return {
@@ -53,26 +53,34 @@ type Options = {
   readonly lazy?: boolean
 }
 
+const wait = (ms: number) => new Promise(resolve => setTimeout(resolve, ms))
+
 function useApi<R extends any = any>(endpoint: string, options: Options = { lazy: false }) {
   const memoizedOptions = useMemo(() => options, [])
-  const controller = useRef(typeof window !== 'undefined' ? new AbortController() : null)
-  const signal = useRef(controller.current ? controller.current.signal : null)
   const [url, setUrl] = useState(() => (options && options.lazy ? null : endpoint))
   const [state, dispatch] = useReducer<Reducer<State<R>, Action<R>>>(reducer, {
     status: 'pending',
     data: null,
     loading: false,
-    error: null
+    error: null,
   })
   useEffect(() => {
+    const controller = new AbortController()
+
     if (url) {
       const doFetch = async () => {
         try {
-          dispatch({type: 'FETCH_INIT'})
-          const response = await fetch(url, {...memoizedOptions.fetchOptions, signal: signal.current})
+          /**
+           * Needed because when doing twice request in a row, the browser actually throws the error after the new
+           * request is being made, thus why we are waiting a small amount just to be sure that it is executed
+           * after the browser has thrown the error
+           */
+          await wait(16)
+          dispatch({ type: 'FETCH_INIT' })
+          const response = await fetch(url, { ...memoizedOptions.fetchOptions, signal: controller.signal })
           if (response.ok) {
             const json = (await response.json()) as R
-              dispatch({ type: 'FETCH_SUCCESS', payload: json })
+            dispatch({ type: 'FETCH_SUCCESS', payload: json })
           } else {
             const body = await response.text()
             dispatch({ type: 'FETCH_FAILED', payload: body })
@@ -88,9 +96,7 @@ function useApi<R extends any = any>(endpoint: string, options: Options = { lazy
       doFetch()
     }
     return () => {
-      if (controller.current) {
-        controller.current.abort()
-      }
+      controller.abort()
     }
   }, [memoizedOptions, url])
 
