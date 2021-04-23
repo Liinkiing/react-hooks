@@ -56,7 +56,7 @@ type Options = {
 function useApi<R extends any = any>(endpoint: string, options: Options = { lazy: false }) {
   const memoizedOptions = useMemo(() => options, [])
   const [url, setUrl] = useState(() => (options && options.lazy ? null : endpoint))
-  const [state, dispatch] = useReducer(reducer as Reducer<State<R>, Action<R>>, { status: 'pending', data: null, loading: false, error: null })
+  const [state, dispatch] = useReducer<Reducer<State<R>, Action<R>>>(reducer, { status: 'pending', data: null, loading: false, error: null })
   useEffect(() => {
     let didCancel = false
     if (url) {
