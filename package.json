@@ -1,6 +1,6 @@
 {
   "name": "@liinkiing/react-hooks",
-  "version": "1.9.3",
+  "version": "1.10.0",
   "description": "A list of custom react hooks",
   "main": "dist/react-hooks.js",
   "types": "dist/index.d.ts",
