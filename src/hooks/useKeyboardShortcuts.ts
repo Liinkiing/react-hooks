@@ -4,7 +4,7 @@ import useKeyboardInput from "./useKeyboardInput"
 interface KeyboardShortcut {
   preventDefault?: boolean
   keys: string[]
-  action: () => void
+  action: (e: KeyboardEvent) => void
 }
 
 function useKeyboardShortcuts<T extends HTMLElement>(shortcuts: KeyboardShortcut[], ref?: RefObject<T>, deps?: DependencyList) {
@@ -16,7 +16,7 @@ function useKeyboardShortcuts<T extends HTMLElement>(shortcuts: KeyboardShortcut
         if (shortcut.preventDefault) {
           e.preventDefault()
         }
-        shortcut.action()
+        shortcut.action(e)
       }
     })
   }, deps || [], ref)
